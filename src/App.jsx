@@ -1,10 +1,7 @@
-
-
-function App() {
-
+function App () {
   return (
     <>
-    <h1>Gif Expert</h1>
+      <h1>Gif Expert</h1>
     </>
   )
 }
