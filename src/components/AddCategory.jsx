@@ -26,7 +26,7 @@ export function AddCategory ({ onSetCategory }) {
           value={inputValue}
           onChange={handleChangeInput}
         />
-        <button type='submit'>Buscar...</button>
+        <button className='btn-buscar' type='submit'>Buscar...</button>
       </form>
     </>
   )

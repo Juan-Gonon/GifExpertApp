@@ -61,3 +61,29 @@
   .card img {
     width: 100%;
   }
+
+  form{
+    /* background: aqua; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+
+    .btn-buscar{
+      padding: 10px 15px;
+      border-radius: 5px;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      transition: transform .5s;
+      box-shadow: 5px 15px 10px rgba(255,255,255,.5);
+      background: #222;
+      color: #fff;
+      font-weight: 700;
+
+      &:hover{
+        transform: scale(1.01);
+      }
+
+    }
+  }

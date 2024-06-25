@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { getGif } from '../helpers/getGifs'
+// import { data } from '../mocks/getGifts.json'
 
 export function useFetchGifs ({ category }) {
   const [image, setImage] = useState([])
@@ -7,7 +8,7 @@ export function useFetchGifs ({ category }) {
 
   useEffect(() => {
     const newImage = async () => {
-      const newImg = await getGif(category)
+      const newImg = await getGif({ category })
       setImage(newImg)
       setIsLoading(false)
     }
