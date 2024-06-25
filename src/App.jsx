@@ -1,25 +1,25 @@
 import { useState } from 'react'
 import { AddCategory } from './components/AddCategory'
+import { GifGrid } from './components/GifGrid'
 
 function App () {
   const [categories, setCategories] = useState(['One punch', 'Two Punch'])
 
   const onAddCategory = ({ inputValue }) => {
-    console.log('Agregado')
+    if (categories.includes(inputValue)) return
+
     setCategories((prevState) => ([...prevState, inputValue]))
   }
 
   return (
     <>
       <h1>Gif Expert</h1>
-      <AddCategory setCategory={onAddCategory} />
-      <ol>
-        {
+      <AddCategory onSetCategory={onAddCategory} />
+      {
           categories?.map((element, item) => (
-            <li key={item}>{element}</li>
+            <GifGrid key={`${element}-${item}`} category={element} />
           ))
-        }
-      </ol>
+      }
     </>
   )
 }

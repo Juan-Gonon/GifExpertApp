@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 // eslint-disable-next-line react/prop-types
-export function AddCategory ({ setCategory }) {
+export function AddCategory ({ onSetCategory }) {
   const [inputValue, setInputValue] = useState('')
 
   const handleChangeInput = (e) => {
@@ -13,7 +13,7 @@ export function AddCategory ({ setCategory }) {
 
     if (inputValue.trim().length <= 1) return
 
-    setCategory({ inputValue })
+    onSetCategory({ inputValue })
     setInputValue('')
   }
 
