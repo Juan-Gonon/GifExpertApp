@@ -3,7 +3,7 @@ import { AddCategory } from './components/AddCategory'
 import { GifGrid } from './components/GifGrid'
 
 function App () {
-  const [categories, setCategories] = useState(['One punch', 'Two Punch'])
+  const [categories, setCategories] = useState(['One punch'])
 
   const onAddCategory = ({ inputValue }) => {
     if (categories.includes(inputValue)) return
