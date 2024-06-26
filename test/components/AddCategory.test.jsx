@@ -1,4 +1,4 @@
-import { afterEach, describe, expect, it } from 'vitest'
+import { afterEach, describe, expect, it, vi } from 'vitest'
 import { AddCategory } from '../../src/components/AddCategory'
 import { fireEvent, render, screen, cleanup } from '@testing-library/react'
 
@@ -17,8 +17,9 @@ describe('Prueba en <AddCategory />', () => {
 
   it('debe de llamar onNewCategory si el input tiene un valor', () => {
     const inputValue = 'Kamila'
+    const onNewCategory = vi.fn()
 
-    render(<AddCategory onSetCategory={() => {}} />)
+    render(<AddCategory onSetCategory={onNewCategory} />)
 
     const input = screen.getByRole('textbox')
     const form = screen.getByRole('form')
@@ -27,5 +28,8 @@ describe('Prueba en <AddCategory />', () => {
     fireEvent.submit(form)
     // screen.debug()
     expect(input.value).toBe('')
+    expect(onNewCategory).toHaveBeenCalled()
+    expect(onNewCategory).toHaveBeenCalledTimes(1)
+    expect(onNewCategory).toHaveBeenCalledWith({ inputValue })
   })
 })
