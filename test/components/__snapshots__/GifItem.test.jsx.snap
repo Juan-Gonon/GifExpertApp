@@ -1,0 +1,12 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<GifItem /> > show to give <GifItem /> 1`] = `
+<div>
+  <div
+    class="card"
+  >
+    <img />
+    <p />
+  </div>
+</div>
+`;
