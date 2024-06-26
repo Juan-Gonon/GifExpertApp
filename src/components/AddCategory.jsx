@@ -10,7 +10,6 @@ export function AddCategory ({ onSetCategory }) {
 
   const handleSubmitForm = (e) => {
     e.preventDefault()
-
     if (inputValue.trim().length <= 1) return
 
     onSetCategory({ inputValue })
@@ -19,7 +18,7 @@ export function AddCategory ({ onSetCategory }) {
 
   return (
     <>
-      <form action='' onSubmit={handleSubmitForm}>
+      <form action='' onSubmit={handleSubmitForm} aria-label='form'>
         <input
           type='text'
           placeholder='Buscar gif...'
