@@ -32,4 +32,16 @@ describe('Prueba en <AddCategory />', () => {
     expect(onNewCategory).toHaveBeenCalledTimes(1)
     expect(onNewCategory).toHaveBeenCalledWith({ inputValue })
   })
+
+  it('No debe de llamar el onNewCategory si el input está vació', () => {
+    const onNewCategory = vi.fn()
+
+    render(<AddCategory onSetCategory={onNewCategory} />)
+
+    const form = screen.getByRole('form')
+
+    fireEvent.submit(form)
+
+    expect(onNewCategory).not.toHaveBeenCalled()
+  })
 })
